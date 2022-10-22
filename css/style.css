@@ -1,0 +1,1637 @@
+.wrapper{
+	overflow: hidden;
+	min-height: 100%;
+	min-height: 100vh;
+	background-color: black;
+}
+.game__container {
+	padding: 10px;
+	max-width: 1100px;
+	margin: 0px auto;
+}
+.game__block{
+	position: relative;
+}
+.game__background{
+	margin: 0 auto;
+}
+.game__background img{
+	height: 960px;
+	position: absolute;
+	z-index: 5;
+}
+.game__background:nth-child(1){
+	height: 960px;
+	position: absolute;
+	z-index: 3;
+	animation: error 0.0001s linear 1 forwards 21.8s;
+}
+@keyframes error{
+	100%{
+		z-index: 16;
+	}
+}
+
+.game__icon-image img{
+	position: absolute;
+	z-index: 12;
+}
+.game__icon-image img:nth-child(1){
+	top: 286px;
+	right: 467px;
+	animation: icon 0.0001s linear 1 forwards 13.4s;
+}
+.game__icon-image img:nth-child(2){
+	top: 286px;
+	right: 432px;
+	animation: icon 0.0001s linear 1 forwards 13.3s;
+}
+.game__icon-image img:nth-child(3){
+	top: 320px;
+	right: 467px;
+	animation: icon 0.0001s linear 1 forwards 9.8s;
+}
+.game__icon-image img:nth-child(4){
+	top: 320px;
+	right: 432px;
+	animation: icon 0.0001s linear 1 forwards 8.4s;
+}
+.game__icon-image img:nth-child(5){
+	top: 354px;
+	right: 467px;
+	animation: icon 0.0001s linear 1 forwards 8.2s;
+}
+.game__icon-image img:nth-child(6){
+	top: 354px;
+	right: 432px;
+	animation: icon 0.0001s linear 1 forwards 6.7s;
+}
+.game__icon-image img:nth-child(7){
+	top: 388px;
+	right: 467px;
+	animation: icon 0.0001s linear 1 forwards 1.4s;
+}
+.game__icon-image img:nth-child(8){
+	top: 388px;
+	right: 432px;
+	animation: icon 0.0001s linear 1 forwards 0.7s;
+}
+
+@keyframes icon{
+	100%{
+		z-index: -1;
+	}
+}
+.game__field {
+	position: relative;
+	overflow: hidden;
+	left: 67px;
+	top: 33px;
+	width: 100%;
+	height: 100%;
+	z-index: 6;
+}
+
+/* ====================================================================== neutral ============== */
+.tank__tank-respawn {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 5px; 
+	left: 278px; 
+	animation: respawn 1s steps(28) 1;
+	z-index: -1;
+}
+.tank__tank-birth {
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	background: url("../img/main-tank/start_shield_right.png") 0px 0px;
+	bottom: 0px; 
+	left: 278px; 
+	animation: birth 0.08s steps(2) infinite 1s,
+	birth-move 2s linear 1 forwards 1s; 
+	opacity: 0; 
+}
+.tank__bullet {
+	position: absolute;
+	height: 21px;
+	width: 17px;
+	background: url("../img/neutral/bullet.png") 0px 0px;
+	bottom: 26px; 
+	left: 315px; 
+	animation: bullet-move 1s linear 1 forwards 5.7s,
+	bullet-move-2 1s linear 1 forwards 6.9s,
+	bullet-move-3 0.25s linear 1 forwards 8.7s,
+	bullet-move-4 0.5s linear 1 forwards 9.4s,
+	bullet-move-5 0.9s linear 1 forwards 10.1s, 
+	bullet-move-6 0.3s linear 1 forwards 11.6s, 
+	bullet-move-7 0.8s linear 1 forwards 13.9s, 
+	bullet-move-8 1.4s linear 1 forwards 19.6s; 
+	opacity: 0; 
+}
+@keyframes bullet-move-8{
+	0%{
+		opacity: 1;
+		transform: translate(-12px, -710px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(-12px, 100px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(-12px, 100px) rotate(180deg);
+	}
+}
+/* ----------------------------------------------------------------------------bullet-------------- */
+@keyframes bullet-move{
+	0%{
+		opacity: 1;
+		transform: translate(40px, -825px) rotate(90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(560px, -825px) rotate(90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(560px, -825px) rotate(90deg);
+	}
+}
+@keyframes bullet-move-2{
+0%{
+	opacity: 1;
+	transform: translate(40px, -825px) rotate(90deg);
+}
+99.9%{
+	opacity: 1;
+	transform:  translate(510px, -825px) rotate(90deg);
+}
+100%{
+	opacity: 0;
+	transform:  translate(510px, -825px) rotate(90deg);
+}
+}
+@keyframes bullet-move-3{
+0%{
+	opacity: 1;
+	transform: translate(-40px, -820px) rotate(-90deg);
+}
+99.9%{
+	opacity: 1;
+	transform:  translate(-150px, -820px) rotate(-90deg);
+}
+100%{
+	opacity: 0;
+	transform:  translate(-150px, -820px) rotate(-90deg);
+}
+}
+@keyframes bullet-move-4{
+0%{
+	opacity: 1;
+	transform: translate(-40px, -820px) rotate(-90deg);
+}
+99.9%{
+	opacity: 1;
+	transform:  translate(-350px, -820px) rotate(-90deg);
+}
+100%{
+	opacity: 0;
+	transform:  translate(-350px, -820px) rotate(-90deg);
+}
+}
+@keyframes bullet-move-5{
+	0%{
+		opacity: 1;
+		transform: translate(60px, -820px) rotate(90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(550px, -820px) rotate(90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(550px, -820px) rotate(90deg);
+	}
+}
+@keyframes bullet-move-6{
+	0%{
+		opacity: 1;
+		transform: translate(265px, -750px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(265px, -650px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(265px, -650px) rotate(180deg);
+	}
+}
+@keyframes bullet-move-7{
+	0%{
+		opacity: 1;
+		transform: translate(50px, -820px) rotate(-90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(-310px, -820px) rotate(-90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(-310px, -820px) rotate(-90deg);
+	}
+}
+
+.tank__explosive-wall {
+	position: absolute;
+	height: 72px;
+	width: 72px;
+	background: url("../img/neutral/explosive_wall.png") 0px 0px;
+	bottom: 825px; 
+	left: 860px; 
+	animation: explosive-wall 0.15s steps(5) 1 6.7s,
+	explosive-wall-2 0.05s linear 1 forwards 6.86s,
+	explosive-wall-3 0.15s steps(5) 1 7.3s;
+	opacity: 0;
+}
+
+/* ======================================================================== tank move ============ */
+.tank__move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/main-tank/main_tank_right.png") 0px 0px;
+	bottom: 0px;
+	left: 278px; 
+	opacity: 0; 
+	animation: play 0.18s steps(4) infinite 3s,
+	tank-moving-up 2.15s linear 1 forwards 3s,
+	tank-moving-right-stop 0.25s linear 1 forwards 5.25s, 
+	tank-moving-right 0.2s linear 1 forwards 5.5s,
+	tank-moving-left 0.3s linear 1 forwards 7.4s,
+	tank-moving-right-2 1s linear 1 forwards 9.8s,
+	tank-moving-right-3 0.5s linear 1 forwards 11s,
+	tank-moving-down 0.6s linear 1 forwards 11.5s,
+	tank-moving-up-2 0.6s linear 1 forwards 12.1s,
+	tank-moving-left-2 1.1s linear 1 forwards 12.9s,
+	tank-moving-right-4 2s linear 1 forwards 14.5s,
+	tank-moving-left-3 2.5s linear 1 forwards 16.5s,
+	tank-moving-down-2 5s linear 1 forwards 19s;
+}
+/* ----------------------------------------------------------------------------- tank move--------------- */
+
+@keyframes tank-moving-up {
+	0%{
+		opacity: 1;
+		transform: translate(0px, -400px) rotate(-90deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(0px, -830px) rotate(-90deg);
+	}
+}
+
+@keyframes tank-moving-right-stop {
+	0%{
+		opacity: 1;
+		transform: translate(0px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(0px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-right {
+	0%{
+		opacity: 1;
+		transform: translate(0px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(40px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-left {
+	0%{
+		opacity: 1;
+		transform: translate(40px, -825px) rotate(180deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(-20px, -825px) rotate(180deg);
+	}
+}
+@keyframes tank-moving-right-2 {
+	0%{
+		opacity: 1;
+		transform: translate(-20px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(180px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-right-3 {
+	0%{
+		opacity: 1;
+		transform: translate(180px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(270px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-down {
+	0%{
+		opacity: 1;
+		transform: translate(270px, -825px) rotate(90deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(270px, -725px) rotate(90deg);
+	}
+}
+@keyframes tank-moving-up-2 {
+	0%{
+		opacity: 1;
+		transform: translate(275px, -725px) rotate(-90deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(275px, -825px) rotate(-90deg);
+	}
+}
+@keyframes tank-moving-left-2 {
+	0%{
+		opacity: 1;
+		transform: translate(270px, -825px) rotate(180deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(70px, -825px) rotate(180deg);
+	}
+}
+@keyframes tank-moving-right-4 {
+	0%{
+		opacity: 1;
+		transform: translate(70px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(420px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-left-3 {
+	0%{
+		opacity: 1;
+		transform: translate(420px, -825px) rotate(180deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(-5px, -825px) rotate(180deg);
+	}
+}
+@keyframes tank-moving-down-2 {
+	0%{
+		opacity: 1;
+		transform: translate(-5px, -825px) rotate(90deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(-5px, 0px) rotate(90deg);
+	}
+}
+
+/* ===================================== tank enemy ============================================ */
+
+/* ====================================================================== enemy-1 ============== */
+/* ====================================================================== neutral ============== */
+.enemy-1__enemy-birth {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 5px; 
+	animation: respawn-enemy 1s steps(28) 1 0.7s;
+	z-index: -1;
+}
+.enemy-1__bullet {
+	position: absolute;
+	height: 21px;
+	width: 17px;
+	background: url("../img/neutral/bullet.png") 0px 0px;
+	bottom: 825px; 
+	left: 26px; 
+	animation: enemy-1-bullet-move 1s linear 1 forwards 1.7s,
+	enemy-1-bullet-move-2 0.7s linear 1 forwards 2.7s,
+	enemy-1-bullet-move-3 0.6s linear 1 forwards 6.7s; 
+	opacity: 0; 
+}
+.enemy-1__explosive-wall {
+	position: absolute;
+	height: 72px;
+	width: 72px;
+	background: url("../img/neutral/explosive_wall.png") 0px 0px;
+	bottom: 400px; 
+	left: 0px; 
+	animation: enemy-1-explosive-wall 0.15s steps(5) 1 2.7s;
+	z-index: -1;
+}
+.enemy-1__explosive-wall-2 {
+	position: absolute;
+	height: 72px;
+	width: 72px;
+	background: url("../img/neutral/explosive_wall.png") 0px 0px;
+	bottom: 400px; 
+	left: 0px; 
+	animation: enemy-1-explosive-wall-2 0.15s steps(5) 1 3.38s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-1 tank move -------------------- */
+.enemy-1__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 825px; 
+	left: -70px; 
+	z-index: 1; 
+	animation: play-enemy-1 0.18s steps(4) infinite 1.7s,
+	enemy-1-move 0.00005s linear 1 forwards 1.7s,
+	enemy-1-move-down 3s linear 1 forwards 1.71s,
+	enemy-1-move-right 1s linear 1 forwards 5s,
+	enemy-1-move-up 3s linear 1 forwards 6s,
+	enemy-1-move-death 0.0008s linear 1 forwards 8.95s;
+}
+
+/* ====================================================================== enemy-2 ============== */
+/* ====================================================================== neutral ============== */
+.enemy-2__enemy-birth {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 825px; 
+	animation: respawn-enemy 1s steps(28) 1 1.4s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-2 tank move -------------------- */
+.enemy-2__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 895px; 
+	left: 725px; 
+	z-index: 1; 
+	animation: play-enemy-2 0.18s steps(4) infinite 2.4s,
+	enemy-2-move 0.00005s linear 1 forwards 2.4s,
+	enemy-2-move-down 1.8s linear 1 forwards 2.41s,
+	enemy-2-move-down-2 1.6s linear 1 forwards 5s,
+	enemy-2-move-left 2s linear 1 forwards 6.6s,
+   enemy-2-move-up 2.5s linear 1 forwards 8.6s,
+	enemy-2-move-down-3 3s linear 1 forwards 11.3s,
+	enemy-2-move-death 0.0008s linear 1 forwards 11.7s;
+}
+
+/* ====================================================================== enemy-3 ============== */
+/* ====================================================================== neutral ============== */
+.enemy-2__enemy-birth-3 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 825px; 
+	animation: respawn-enemy-2 1s steps(28) 1 6.7s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-3 tank move -------------------- */
+.enemy-3__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 895px; 
+	left: 725px; 
+	z-index: 1; 
+	animation: play-enemy-3 0.18s steps(4) infinite 7.7s,
+	enemy-2-move 0.00005s linear 1 forwards 7.7s, 
+	enemy-2-move-death 0.0008s linear 1 forwards 7.9s;
+}
+
+/* ====================================================================== enemy-4 ============== */
+/* ====================================================================== neutral ============== */
+.enemy-2__enemy-birth-4 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 5px; 
+	animation: respawn-enemy 1s steps(28) 1 8.4s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-4 tank move -------------------- */
+.enemy-4__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 825px; 
+	left: -70px; 
+	z-index: 1; 
+	animation: play-enemy-3 0.18s steps(4) infinite 9.4s,
+	enemy-4-move-down 2.8s linear 1 forwards 9.41s,
+	enemy-4-move-right 0.6s linear 1 forwards 12.21s,
+	enemy-4-move-down-2 1.2s linear 1 forwards 12.81s,
+	enemy-4-move-right-2 0.6s linear 1 forwards 14.7s,
+	enemy-4-move-down-3 2.8s linear 1 forwards 15.3s,
+	enemy-4-move-left 1.4s linear 1 forwards 18.5s,
+	enemy-4-move-right-3 3s linear 1 forwards 20.1s,
+	enemy-4-move-death 0.0008s linear 1 forwards 20.4s;
+}
+
+/* ====================================================================== enemy-5 ============== */
+/* ====================================================================== neutral ============== */
+.enemy-2__enemy-birth-5 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 825px; 
+	animation: respawn-enemy-2 1s steps(28) 1 8.2s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-5 tank move -------------------- */
+.enemy-5__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 895px; 
+	left: 725px; 
+	z-index: 1; 
+	animation: play-enemy-3 0.18s steps(4) infinite 9.2s,
+	enemy-5-move 0.00005s linear 1 forwards 9.2s,
+	enemy-5-move-down 2.9s linear 1 forwards 9.1s,
+	enemy-5-move-left 2.4s linear 1 forwards 12.8s,
+	enemy-5-move-down-2 1.2s linear 1 forwards 15.2s,
+	enemy-5-move-right 2.1s linear 1 forwards 16.4s,
+	enemy-5-move-up 1.4s linear 1 forwards 18.5s,
+	enemy-5-move-left-2 1.8s linear 1 forwards 19.9s,
+	enemy-5-move-death 0.0008s linear 1 forwards 20.4s;
+}
+
+/* ====================================================================== enemy-6 ============== */
+/* ====================================================================== neutral ============== */
+.enemy-2__enemy-birth-6 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 825px; 
+	animation: respawn-enemy-2 1s steps(28) 1 9.8s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-6 tank move -------------------- */
+.enemy-6__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 895px; 
+	left: 725px; 
+	z-index: 1; 
+	animation: play-enemy-3 0.18s steps(4) infinite 10.8s,
+	enemy-5-move 0.00005s linear 1 forwards 10.8s,
+	enemy-2-move-death 0.0008s linear 1 forwards 11s;
+}
+
+/* ====================================================================== enemy-7 ============== */
+.enemy-2__enemy-birth-7 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 5px; 
+	animation: respawn-enemy 1s steps(28) 1 13.3s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-7 tank move -------------------- */
+.enemy-7__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 895px; 
+	left: -100px;
+	z-index: 1; 
+	animation: play-enemy-3 0.18s steps(4) infinite 14.3s,
+	enemy-7-move 0.00005s linear 1 forwards 14.3s, 
+	enemy-7-move-death 0.0008s linear 1 forwards 14.6s;
+}
+
+/* ====================================================================== enemy-8 ============== */
+.enemy-2__enemy-birth-8 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/respawn.png") 0px 0px;
+	bottom: 825px; 
+	left: 825px; 
+	animation: respawn-enemy-2 1s steps(28) 1 13.4s;
+	z-index: -1;
+}
+.enemy-8__explosive-wall {
+	position: absolute;
+	height: 72px;
+	width: 72px;
+	background: url("../img/neutral/explosive_wall.png") 0px 0px;
+	bottom: -20px; 
+	left: 275px; 
+	animation: explosive-wall-8 0.15s steps(5) 1 20.9s;
+	z-index: -1;
+}
+
+/* -------------------------------------------------------- enemy-8 tank move -------------------- */
+.enemy-8__enemy-move { 
+	position: absolute;
+	height: 70px;
+	width: 70px; 
+	background: url("../img/enemy-tank/enemy_tank_right.png") 0px 0px;
+	bottom: 895px; 
+	left: 725px; 
+	z-index: 1; 
+	animation: play-enemy-2 0.18s steps(4) infinite 14.4s,
+	enemy-8-move 0.00005s linear 1 forwards 14.4s,
+	enemy-8-move-down 1.8s linear 1 forwards 14.41s,
+	enemy-8-move-down-2 1.6s linear 1 forwards 16.2s,
+	enemy-8-move-left 2s linear 1 forwards 17.8s,
+   enemy-8-move-up 2.5s linear 1 forwards 19.8s,
+	enemy-8-move-death 0.0008s linear 1 forwards 20.4s;
+}
+
+
+
+/* ====================================================================== grenade ============== */
+.tank__grenade {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/grenade.png") 0px 0px;
+	bottom: 555px; 
+	left: 242px; 
+	animation: grenade 0.5s steps(2) 10 15.5s;
+	opacity: 0;
+}
+
+@keyframes grenade {
+	0% {
+		opacity: 1; 
+		background-position: 130px; /*ширина картинки со спрайтами*/
+	}
+}
+.tank__500 {
+	position: absolute;
+	height: 65px;
+	width: 65px;
+	background: url("../img/neutral/500.png") 0px 0px;
+	bottom: 552px; 
+	left: 245px; 
+	animation: boom 1s steps(1) 5 20.3s;
+	opacity: 0;
+	z-index: 10;
+}
+@keyframes boom {
+	0% {
+		opacity: 1; 
+		background-position: 130px; /*ширина картинки со спрайтами*/
+	}
+}
+
+/* ------------------------------------------------------------ enemy-8 tank move ---------------- */
+@keyframes enemy-8-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 70px) rotate(90deg);
+	}
+}
+@keyframes enemy-8-move-down {
+	0%{
+		transform: translate(100px, 70px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 275px) rotate(90deg);
+	}
+}
+@keyframes enemy-8-move-down-2 {
+	0%{
+		transform: translate(100px, 275px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 450px) rotate(90deg);
+	}
+}
+@keyframes enemy-8-move-left {
+	0%{
+		transform: translate(100px, 450px) rotate(180deg);
+	}
+	100%{
+		transform:  translate(-173px, 450px) rotate(180deg);
+	}
+}
+@keyframes enemy-8-move-up {
+	0%{
+		transform: translate(-173px, 450px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(-173px, 150px) rotate(-90deg);
+	}
+}
+@keyframes enemy-8-move-down-3 {
+	0%{
+		transform: translate(-173px, 150px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(-173px, 520px) rotate(90deg);
+	}
+}
+@keyframes enemy-8-move-left-2 {
+	0%{
+		transform: translate(-173px, 520px) rotate(180deg);
+	}
+	100%{
+		transform:  translate(-450px, 520px) rotate(180deg);
+	}
+}
+@keyframes enemy-8-move-up-2 {
+	0%{
+		transform: translate(-445px, 520px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(-445px, 150px) rotate(-90deg);
+	}
+}
+@keyframes enemy-8-move-death {
+	100%{
+		z-index: -3;
+		transform: translate(-445px, 150px) rotate(0deg);
+	}
+}
+
+
+/* ----------------------------------------------------------------------------- tank move--------------- */
+
+@keyframes tank-moving-up {
+	0%{
+		opacity: 1;
+		transform: translate(0px, -400px) rotate(-90deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(0px, -830px) rotate(-90deg);
+	}
+}
+
+@keyframes tank-moving-right-stop {
+	0%{
+		opacity: 1;
+		transform: translate(0px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(0px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-right {
+	0%{
+		opacity: 1;
+		transform: translate(0px, -825px) rotate(0deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(40px, -825px) rotate(0deg);
+	}
+}
+@keyframes tank-moving-left {
+	0%{
+		opacity: 1;
+		transform: translate(40px, -825px) rotate(180deg);
+	}
+	100%{
+		opacity: 1;
+		transform:  translate(-20px, -825px) rotate(180deg);
+	}
+}
+
+/* ----------------------------------------------------------------- enemy-1 tank move ---------------- */
+@keyframes enemy-1-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(70px, 0px) rotate(90deg);
+	}
+}
+@keyframes enemy-1-move-down {
+	0%{
+		transform: translate(70px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(70px, 375px) rotate(90deg);
+	}
+}
+@keyframes enemy-1-move-right {
+	0%{
+		transform: translate(70px, 375px) rotate(0deg);
+	}
+	100%{
+		transform:  translate(208px, 375px) rotate(0deg);
+	}
+}
+@keyframes enemy-1-move-up {
+	0%{
+		transform: translate(208px, 375px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(208px, 0px) rotate(-90deg);
+	}
+}
+@keyframes enemy-1-move-death {
+	100%{
+		z-index: -1;
+		transform: translate(208px, 375px) rotate(-90deg);
+	}
+}
+
+/* ------------------------------------------------------------ enemy-2 tank move ---------------- */
+@keyframes enemy-2-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 70px) rotate(90deg);
+	}
+}
+@keyframes enemy-2-move-down {
+	0%{
+		transform: translate(100px, 70px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 275px) rotate(90deg);
+	}
+}
+@keyframes enemy-2-move-down-2 {
+	0%{
+		transform: translate(100px, 275px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 450px) rotate(90deg);
+	}
+}
+@keyframes enemy-2-move-left {
+	0%{
+		transform: translate(100px, 450px) rotate(180deg);
+	}
+	100%{
+		transform:  translate(-173px, 450px) rotate(180deg);
+	}
+}
+@keyframes enemy-2-move-up {
+	0%{
+		transform: translate(-173px, 450px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(-173px, 150px) rotate(-90deg);
+	}
+}
+@keyframes enemy-2-move-down-3 {
+	0%{
+		transform: translate(-173px, 150px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(-173px, 520px) rotate(90deg);
+	}
+}
+@keyframes enemy-2-move-left-2 {
+	0%{
+		transform: translate(-173px, 520px) rotate(180deg);
+	}
+	100%{
+		transform:  translate(-450px, 520px) rotate(180deg);
+	}
+}
+@keyframes enemy-2-move-up-2 {
+	0%{
+		transform: translate(-445px, 520px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(-445px, 150px) rotate(-90deg);
+	}
+}
+
+/* -------------------------------------------------------------------- enemy-3 tank move ---------------- */ 
+@keyframes enemy-3-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 70px) rotate(90deg);
+	}
+}
+@keyframes enemy-2-move-death {
+	100%{
+		z-index: -1; 
+		transform: translate(100px, 275px) rotate(90deg);
+	}
+}
+/* ----------------------------------------------------------------- enemy-4 tank move ---------------- */
+@keyframes enemy-4-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(70px, 0px) rotate(90deg);
+	}
+}
+@keyframes enemy-4-move-down {
+	0%{
+		transform: translate(70px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(70px, 375px) rotate(90deg);
+	}
+}
+@keyframes enemy-4-move-right {
+	0%{
+		transform: translate(70px, 375px) rotate(0deg);
+	}
+	100%{
+		transform:  translate(140px, 375px) rotate(0deg);
+	}
+}
+@keyframes enemy-4-move-down-2 {
+	0%{
+		transform: translate(140px, 375px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(140px, 512px) rotate(90deg);
+	}
+}
+@keyframes enemy-4-move-right-2 {
+	0%{
+		transform: translate(140px, 512px) rotate(0deg);
+	}
+	100%{
+		transform: translate(208px, 512px) rotate(0deg);
+	}
+}
+@keyframes enemy-4-move-down-3 {
+	0%{
+		transform: translate(208px, 512px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(208px, 825px) rotate(90deg);
+	}
+}
+@keyframes enemy-4-move-left {
+	0%{
+		transform: translate(208px, 825px) rotate(180deg);
+	}
+	100%{
+		transform:  translate(70px, 825px) rotate(180deg);
+	}
+}
+@keyframes enemy-4-move-right-3 {
+	0%{
+		transform: translate(70px, 825px) rotate(0deg);
+	}
+	100%{
+		transform:  translate(350px, 825px) rotate(0deg);
+	}
+}
+@keyframes enemy-4-move-death {
+	100%{
+		z-index: -1;
+		transform: translate(208px, 375px) rotate(0deg);
+	}
+}
+
+/* ------------------------------------------------------------ enemy-5 tank move ---------------- */
+@keyframes enemy-5-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 70px) rotate(90deg);
+	}
+}
+@keyframes enemy-5-move-down {
+	0%{
+		transform: translate(100px, 70px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 450px) rotate(90deg);
+	}
+}
+@keyframes enemy-5-move-left {
+	0%{
+		transform: translate(100px, 450px) rotate(180deg);
+	}
+	100%{
+		transform:  translate(-173px, 450px) rotate(180deg);
+	}
+}
+@keyframes enemy-5-move-down-2 {
+	0%{
+		transform: translate(-173px, 450px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(-173px, 580px) rotate(90deg);
+	}
+}
+@keyframes enemy-5-move-right {
+	0%{
+		transform: translate(-173px, 580px) rotate(0deg);
+	}
+	100%{
+		transform:  translate(30px, 580px) rotate(0deg);
+	}
+}
+@keyframes enemy-5-move-up {
+	0%{
+		transform: translate(30px, 580px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(30px, 450px) rotate(-90deg);
+	}
+}
+@keyframes enemy-5-move-left-2 {
+	0%{
+		transform: translate(30px, 450px) rotate(-180deg);
+	}
+	100%{
+		transform:  translate(-173px, 450px) rotate(-180deg);
+	}
+}
+@keyframes enemy-5-move-up-2 {
+	0%{
+		transform: translate(-173px, 450px) rotate(-90deg);
+	}
+	100%{
+		transform:  translate(-173px, 200px) rotate(-90deg);
+	}
+}
+@keyframes enemy-5-move-death {
+	100%{
+		z-index: -3;
+		transform: translate(-173px, 200px) rotate(0deg);
+	}
+}
+
+/* ------------------------------------------------------------ enemy-2 tank move ---------------- */
+@keyframes enemy-7-move {
+	0%{
+		transform: translate(0px, 0px) rotate(90deg);
+	}
+	100%{
+		transform:  translate(100px, 70px) rotate(90deg);
+	}
+}
+@keyframes enemy-7-move-death {
+	0%{
+		z-index: -1;
+		transform: translate(100px, 70px) rotate(90deg);
+	}
+	100%{
+		z-index: -1;
+		transform:  translate(100px, 275px) rotate(90deg);
+	}
+}
+/* ----------------------------------------------------------------------------play---------------- */
+@keyframes play {
+	100% {
+		background-position: 280px;
+	}
+}
+/* --------------------------------------------------------------- enemy-1 tank play---------------- */
+@keyframes play-enemy-1 {
+	100% {
+		z-index: 3; 
+		background-position: 280px;
+	}
+}
+/* ---------------------------------------------------------------- enemy-2 tank play---------------- */
+@keyframes play-enemy-2 {
+	100% {
+		z-index: 3; 
+		background-position: 280px;
+	}
+}
+/* ---------------------------------------------------------------- enemy-3 tank play---------------- */
+@keyframes play-enemy-3 {
+	100% {
+		z-index: 3; 
+		background-position: 280px;
+	}
+}
+/* ---------------------------------------------------------------------------respawn--------------- */
+@keyframes respawn {
+	100% {
+		z-index: 2;
+		background-position: 1820px;
+	}
+}
+
+
+/* ---------------------------------------------------------------------------birth---------------- */
+@keyframes birth {
+	100% {
+		background-position: 140px; /*ширина картинки со спрайтами*/
+	}
+}
+@keyframes birth-move {
+	0%{
+		opacity: 1;
+		transform: translate(0px, 0px) rotate(-90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(0px, -399px)  rotate(-90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(0px, -400px) rotate(-90deg);
+	}
+}
+
+/* ----------------------------------------------------------------------------bullet-------------- */
+@keyframes bullet-move{
+		0%{
+			opacity: 1;
+			transform: translate(40px, -825px) rotate(90deg);
+		}
+		99.9%{
+			opacity: 1;
+			transform:  translate(560px, -825px) rotate(90deg);
+		}
+		100%{
+			opacity: 0;
+			transform:  translate(560px, -825px) rotate(90deg);
+		}
+}
+@keyframes bullet-move-2{
+	0%{
+		opacity: 1;
+		transform: translate(40px, -825px) rotate(90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(510px, -825px) rotate(90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(510px, -825px) rotate(90deg);
+	}
+}
+@keyframes bullet-move-3{
+	0%{
+		opacity: 1;
+		transform: translate(-40px, -820px) rotate(-90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(-150px, -820px) rotate(-90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(-150px, -820px) rotate(-90deg);
+	}
+}
+@keyframes bullet-move-4{
+	0%{
+		opacity: 1;
+		transform: translate(-40px, -820px) rotate(-90deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(-350px, -820px) rotate(-90deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(-350px, -820px) rotate(-90deg);
+	}
+}
+
+/* ----------------------------------------------------------------------------explosive-wall------- */
+@keyframes explosive-wall {
+	0% {
+		opacity: 1;
+		background-position: 360px;
+	}
+}
+@keyframes explosive-wall-2 {
+	0% {
+		opacity: 0;
+		transform:  translate(0px, 0px) rotate(0deg);
+	}
+	100% {
+		opacity: 0;
+		transform:  translate(-725px, -20px) rotate(0deg);
+	}
+}
+@keyframes explosive-wall-3 {
+	0% {
+		opacity: 1;
+		background-position: 360px;
+	}
+}
+@keyframes explosive-wall-8 {
+	0% {
+		z-index: 3;
+		background-position: 360px;
+	}
+}
+
+/* -------------------------------------------------------------- enemy-1 tank bullet-------------- */
+@keyframes enemy-1-bullet-move{
+	0%{
+		opacity: 1;
+		transform: translate(0px, 0px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+}
+@keyframes enemy-1-bullet-move-2{
+	0%{
+		opacity: 1;
+		transform: translate(0px, 130px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		z-index: 5;
+		transform:  translate(0px, 410px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		z-index: 5;
+		transform:  translate(0px, 410px) rotate(180deg);
+	}
+}
+@keyframes enemy-1-bullet-move-3{
+	0%{
+		opacity: 1;
+		transform: translate(140px, 250px) rotate(0deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(140px, -50px) rotate(0deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(140px, -50px) rotate(0deg);
+	}
+}
+
+/* -------------------------------------------------------------- enemy-2 tank bullet-------------- */
+@keyframes enemy-2-bullet-move{
+	0%{
+		opacity: 1;
+		transform: translate(0px, 0px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+}
+@keyframes enemy-2-bullet-move-2{
+	0%{
+		opacity: 1;
+		transform: translate(0px, 130px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+}
+@keyframes enemy-2-bullet-move-3{
+	0%{
+		opacity: 1;
+		transform: translate(140px, 250px) rotate(0deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(140px, -50px) rotate(0deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(140px, -50px) rotate(0deg);
+	}
+}
+
+/* -------------------------------------------------------------- enemy-3 tank bullet-------------- */
+@keyframes enemy-3-bullet-move{
+	0%{
+		opacity: 1;
+		transform: translate(0px, 0px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+}
+@keyframes enemy-3-bullet-move-2{
+	0%{
+		opacity: 1;
+		transform: translate(0px, 130px) rotate(180deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(0px, 400px) rotate(180deg);
+	}
+}
+@keyframes enemy-3-bullet-move-3{
+	0%{
+		opacity: 1;
+		transform: translate(140px, 250px) rotate(0deg);
+	}
+	99.9%{
+		opacity: 1;
+		transform:  translate(140px, -50px) rotate(0deg);
+	}
+	100%{
+		opacity: 0;
+		transform:  translate(140px, -50px) rotate(0deg);
+	}
+}
+
+/* -------------------------------------------------------------------- enemy-1-explosive-wall ---- */
+@keyframes enemy-1-explosive-wall {
+	100% {
+		background-position: 360px;
+		z-index: 3;
+	}
+}
+@keyframes enemy-1-explosive-wall-2 {
+	100% {
+		background-position: 360px;
+		z-index: 4;
+	}
+}
+/* -------------------------------------------------------------------- enemy-2-explosive-wall ---- */
+@keyframes enemy-2-explosive-wall {
+	100% {
+		background-position: 360px;
+		z-index: 3;
+	}
+}
+/* -------------------------------------------------------------------- enemy-3-explosive-wall ---- */
+@keyframes enemy-3-explosive-wall {
+	100% {
+		background-position: 360px;
+		z-index: 3;
+	}
+}
+/* ---------------------------------------------------------------------------respawn--------------- */
+
+@keyframes respawn-enemy {
+	100% {
+		z-index: 2;
+		background-position: 1820px;
+	}
+}
+@keyframes respawn-enemy-2 {
+	0% {
+		bottom: 825px; 
+		left: 5px; 
+		z-index: 2;
+		background-position: 1820px;
+		transform: translate(820px, 0px);
+	}
+	100% {
+		z-index: 2;
+		background-position: 1820px;
+		transform: translate(820px, 0px);
+	}
+}
+@keyframes respawn-enemy-2 {
+	100% {
+		z-index: 2;
+		background-position: 1820px;
+	}
+}
+@keyframes respawn-enemy-3 {
+	100% {
+		z-index: 2;
+		background-position: 1820px;
+	}
+}
+
+/* ----------------------------------------------------------- explosive enemy -------------------- */
+@keyframes explosive-enemy {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+@keyframes explosive-enemy-2 {
+	0% {
+		z-index: -1;
+		transform:  translate(0px, 0px) rotate(0deg);
+	}
+	100% {
+		z-index: -1;
+		transform:  translate(-650px, 0px) rotate(0deg);
+	}
+}
+@keyframes explosive-enemy-3 {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+
+.enemy__explosive-enemy {
+	position: absolute;
+	height: 140px;
+	width: 140px;
+	background: url("../img/neutral/explosive_tank.png") 0px 0px;
+	bottom: 770px; 
+	left: 770px; 
+	animation: explosive-enemy 0.5s steps(23) 1 7.9s,
+	explosive-enemy-2 0.05s linear 1 forwards 8.3s,
+	explosive-enemy-3 0.5s steps(23) 1 8.95s,
+	explosive-enemy-4 0.05s linear 1 forwards 9.45s,
+	explosive-enemy-6 0.5s steps(23) 1 11s,
+	explosive-enemy-7 0.05s linear 1 forwards 11.6s,
+	explosive-enemy-8 0.5s steps(23) 1 11.7s,
+	explosive-enemy-9 0.05s linear 1 forwards 12.3s,
+	explosive-enemy-10 0.5s steps(23) 1 14.6s;
+	z-index: -1;
+}
+
+/* ----------------------------------------------------------- explosive enemy -------------------- */
+@keyframes explosive-enemy {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+@keyframes explosive-enemy-2 {
+	0% {
+		z-index: -1;
+		transform:  translate(0px, 0px) rotate(0deg);
+	}
+	100% {
+		z-index: -1;
+		transform:  translate(-650px, 0px) rotate(0deg);
+	}
+}
+@keyframes explosive-enemy-3 {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+@keyframes explosive-enemy-4 {
+	0% {
+		z-index: -1;
+		transform:  translate(-650px, 0px) rotate(0deg);
+	}
+	100% {
+		z-index: -1;
+		transform:  translate(0px, 0px) rotate(0deg);
+	}
+}
+@keyframes explosive-enemy-6 {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+@keyframes explosive-enemy-7 {
+	0% {
+		z-index: -1;
+		transform:  translate(0px, 0px) rotate(0deg);
+	}
+	100% {
+		z-index: -1;
+		transform:  translate(-250px, 130px) rotate(0deg);
+	}
+}
+@keyframes explosive-enemy-8 {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+@keyframes explosive-enemy-9 {
+	0% {
+		z-index: -1;
+		transform:  translate(0px, 0px) rotate(0deg);
+	}
+	100% {
+		z-index: -1;
+		transform:  translate(-800px, 0px) rotate(0deg);
+	}
+}
+@keyframes explosive-enemy-10 {
+	0% {
+		z-index: 3;
+		background-position: 3220px;
+	}
+}
+/* =================================================================== explosive-enemy ===================== */
+.enemy-4__explosive-enemy{
+	position: absolute;
+	height: 140px;
+	width: 140px;
+	background: url("../img/neutral/explosive_tank.png") 0px 0px;
+	bottom: -30px; 
+	left: 20px; 
+	animation: explosive-all-enemy 0.5s steps(23) 1 20.4s;
+	z-index: -1;  
+}
+.enemy-5__explosive-enemy{
+	position: absolute;
+	height: 140px;
+	width: 140px;
+	background: url("../img/neutral/explosive_tank.png") 0px 0px;
+	bottom: 410px; 
+	left: 645px; 
+	animation: explosive-all-enemy 0.5s steps(23) 1 20.4s;
+	z-index: -1;  
+}
+.enemy-8__explosive-enemy{
+	position: absolute;
+	height: 140px;
+	width: 140px;
+	background: url("../img/neutral/explosive_tank.png") 0px 0px;
+	bottom: 520px; 
+	left: 515px; 
+	animation: explosive-all-enemy 0.5s steps(23) 1 20.4s;
+	z-index: -1;  
+}
+
+@keyframes explosive-all-enemy{
+	100%{
+		z-index: 3; 
+		background-position: 3220px;
+	}
+}
+
+.enemy-1__wall {
+	position: absolute;
+	height: 81px;
+	width: 76px;
+	background: url("../img/field/wall.png") 0px 0px;
+	bottom: 374px; 
+	left: 0px; 
+	animation: wall 25s linear 1 forwards 2.8s;
+	z-index: -1;
+}
+@keyframes wall {
+	0% {
+		z-index: 2;
+	}
+}
